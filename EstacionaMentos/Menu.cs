@@ -305,9 +305,10 @@ namespace EstacionaMentos
 
         public void Excluir()
         {
-            long documento = 0;
             int codigo = 0;
-
+            long documento = 0;
+            string placa = "";
+       
             do
             {
 
@@ -352,7 +353,10 @@ namespace EstacionaMentos
                                     Console.WriteLine("\nInforme o código que deseja excluir:\n");
                                     codigo = Convert.ToInt32(Console.ReadLine());
 
-                                    dao.Excluir(codigo, documento);
+                                    
+
+                                    dao.Excluir(codigo, documento, placa);
+                                    verificador = true;
                                 }
                                 else
                                 {
@@ -372,7 +376,10 @@ namespace EstacionaMentos
                         Console.WriteLine("Informe o cpf que deseja excluir:\n");
                         documento = (long)Convert.ToDouble(Console.ReadLine());
 
-                        dao.Excluir(codigo, documento);
+                        Console.WriteLine("\n Informe a Placa do Veículo");
+                        placa = Console.ReadLine();
+
+                        dao.Excluir(codigo, documento, placa);
 
                         break;
 

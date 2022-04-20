@@ -251,6 +251,7 @@ namespace EstacionaMentos
                         dataPagamento[i] = DateTime.Parse("" + leitura["dataPagamento"]);
                         valorMensal[i] = Convert.ToDouble(leitura["valorMensal"]);
 
+                        leitura.Close();
                         
                         query = $"select * from veiculo";
 
@@ -906,7 +907,7 @@ namespace EstacionaMentos
 
 
         // EXCLUIR
-        public void Excluir(int codigo, long documento)
+        public void Excluir(int codigo, long documento, string placa)
         {
 
             PreencherVetor();
@@ -945,6 +946,12 @@ namespace EstacionaMentos
                                 resultado = $"delete from mensalista where cpf = '{documento}'";
 
                                 MySqlCommand sql = new MySqlCommand(resultado, conexao);
+
+                                resultado = "" + sql.ExecuteNonQuery();
+
+                                resultado = "";
+
+                                resultado = $"delete from veiculo where placa = '{placa}'";
 
                                 resultado = "" + sql.ExecuteNonQuery();
 
