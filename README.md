@@ -2,7 +2,7 @@
 
 Project made in SENAC programming class.
 
-It's a simple parking lot software that has connection with a database made with MySQL, but is without any refatoration. Be careful.
+It's a simple parking lot software that has connection with a database made with MySQL, but hasn't any refatoring. Be careful.
 
 Colaborators:
   - Gustavo Laurindo dos Santos;
