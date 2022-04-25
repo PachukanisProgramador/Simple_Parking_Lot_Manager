@@ -43,10 +43,3 @@ telefone varchar(15) not null,
 dataPagamento date not null,
 valorMensal decimal(10,2)
 )Engine = InnoDB;
-
-alter table funcionario drop column cpf;
-alter table Funcionario add cod int primary key auto_increment not null;
-
-alter table funcionario add nome varchar(150) not null;
-
-select * from mensalista;
